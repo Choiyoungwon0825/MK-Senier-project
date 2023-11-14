@@ -126,4 +126,14 @@ export default {
 .v-btn {
   margin-left: auto;
 }
+
+@media (min-width: 800px) and (max-width: 1200px) {
+    .v-app-bar {
+      display: none;
+    }
+    .v-main{
+      padding-top: 0;
+      overflow: hidden;
+    }
+}
 </style>
