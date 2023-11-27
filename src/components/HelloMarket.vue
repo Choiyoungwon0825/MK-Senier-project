@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12" class="Main">
-        <v-carousel hide-delimiters cycle interval="5000" hide-controls>
+        <v-carousel hide-delimiters cycle interval="3500" hide-controls>
           <v-carousel-item v-for="(item, index) in imageArray" :key="index">
             <v-img :src="item.src" :alt="item.alt"></v-img>
           </v-carousel-item>

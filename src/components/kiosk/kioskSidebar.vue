@@ -9,10 +9,17 @@
       <!--marker에게 전달 받은 내용이 있으면 표시-->
       <v-list-item v-if="marker">
         <v-list-item-content>
-          <v-list-item-title>{{ marker.storeName }}</v-list-item-title>
+          <v-list-item-title>
+            <div class="name">
+              상점이름 : 
+              <span>{{ marker.storeName }}</span>
+            </div>
+          </v-list-item-title>
+          
           <v-img :src="marker.image" />
 
-          <div v-if="marker.reviews.length === 0">
+          <div v-if="marker.reviews.length === 0" class="sidestyle">
+            <div class="review">등록 후기</div>
             <v-list-item-subtitle>리뷰가 없습니다.</v-list-item-subtitle>
           </div>
           <div v-for="(review, index) in marker.reviews" :key="index">
@@ -52,3 +59,20 @@ export default {
   },
 };
 </script>
+
+<style>
+.name{
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #444444;
+  margin-bottom: 12px;
+}
+.review{
+  margin-top: 12px;
+  color: #444444;
+
+}
+.sidestyle{
+  text-align: center;
+}
+</style>
