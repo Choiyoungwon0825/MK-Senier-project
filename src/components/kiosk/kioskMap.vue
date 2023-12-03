@@ -2,7 +2,6 @@
   <v-app>
     <kioskSidebar :marker="clickedMarker" v-model:drawerOpen="drawerOpen" />
     <!-- clickedMarker 값을 kioskSidebar -->
-    컴포넌트에 props로 전달합니다
     <v-main>
       <div>
         <div id="map"></div>

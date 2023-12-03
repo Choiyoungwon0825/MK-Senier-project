@@ -70,7 +70,7 @@ export default {
     },
     updateAverageRating() {
       const averageRating = this.$refs.submitReviewRef.averageRatingRef;
-      // 수신한 averageRating 값을 활용하여 원하는 로직을 수행하세요.
+      // 수신한 averageRating 값을 활용하여 원하는 로직을 수행
       console.log('Received average rating:', averageRating.value);
       // ...
     },

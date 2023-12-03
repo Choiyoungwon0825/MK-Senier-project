@@ -20,13 +20,13 @@
       <h2>검색 결과 총 {{ searchResults.length }}개</h2>
       <p style="font-size: 13px; font-style: bold; text-align: center; margin-bottom: 12px;">상품 선택 시 해당 상품의 상점 위치확인이 가능합니다</p>
       <ul>
-        
+        <button v-if="selectedResults.length > 0" @click="showSelectedProducts" class="view-btn">선택한 상품 위치 보기</button>
+        <button v-if="canLoadMore" @click="loadMoreResults" class="search-btn">결과 더 보기</button>
         <li v-for="product in searchResults" :key="product.id">
           <v-checkbox v-model="selectedResults" :label="getProductLabel(product)" :value="product"></v-checkbox>
           <button @click="openSearchDialog(product)" class="search-btn-menu">자세히</button>
         </li>
-        <button v-if="selectedResults.length > 0" @click="showSelectedProducts" class="view-btn">선택한 상품 위치 보기</button>
-        <button v-if="canLoadMore" @click="loadMoreResults" class="search-btn">결과 더 보기</button>
+        
         <br>
         
       </ul>
@@ -36,7 +36,7 @@
       <p style="text-align: center; border-top:1px solid #a6a7a8;">검색 결과가 없거나, 아직 검색을 하지 않았습니다.</p>
     </div>
   </div>
-  <!-- 다이얼로그 자세히 버튼 눌렀을 때 나오게 끔 한거 -->
+  <!-- 다이얼로그 자세히 버튼 눌렀을 때 나오게 -->
   <v-dialog class="SearchSlectDialog" v-model="dialogOpen" max-width="600">
     <v-card>
       <v-card-title style="">

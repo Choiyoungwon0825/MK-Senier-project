@@ -76,7 +76,7 @@ export default {
       } catch (error) {
         console.log(error.code, error.message);
         this.errorMessage = "Please sign up to use various services!";
-        alert('Passwords do not match');
+        alert('패스워드가 일치하지 않습니다.');
       }
     },
     async logout() {
